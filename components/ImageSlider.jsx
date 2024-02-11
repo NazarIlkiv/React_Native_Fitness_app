@@ -5,7 +5,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import Carousel, { ParallaxImage } from "react-native-snap-carousel";
-import { sliderImages } from "../constants/sliderImages";
+import { sliderImages } from "../constants/Images";
 
 export default ImageSlider = () => {
   return (

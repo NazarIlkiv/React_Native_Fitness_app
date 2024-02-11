@@ -13,6 +13,7 @@ import {
 } from "react-native-responsive-screen";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import ImageSlider from "../components/ImageSlider";
+import BodyParts from "../components/BodyParts";
 
 const Home = () => {
   return (
@@ -53,6 +54,11 @@ const Home = () => {
       {/* image slider */}
       <View>
         <ImageSlider />
+      </View>
+
+      {/* body parts list */}
+      <View style={{ flex: 1 }}>
+        <BodyParts />
       </View>
     </SafeAreaView>
   );
