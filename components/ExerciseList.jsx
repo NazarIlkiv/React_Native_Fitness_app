@@ -5,6 +5,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { Image } from "expo-image";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 export default function ExerciseList({ data }) {
   const router = useRouter();
@@ -28,7 +29,11 @@ export default function ExerciseList({ data }) {
 
 const ExcerciseCard = ({ item, index, router }) => {
   return (
-    <View>
+    <Animated.View
+      entering={FadeInDown.duration(400)
+        .delay(index * 200)
+        .springify()}
+    >
       <TouchableOpacity
         onPress={() =>
           router.push({ pathname: "/exerciseDetails", params: item })
@@ -51,6 +56,6 @@ const ExcerciseCard = ({ item, index, router }) => {
           {item?.name.length > 20 ? item.name.slice(0, 20) + "..." : item.name}
         </Text>
       </TouchableOpacity>
-    </View>
+    </Animated.View>
   );
 };

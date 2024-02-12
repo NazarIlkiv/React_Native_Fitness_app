@@ -7,6 +7,7 @@ import {
 } from "react-native-responsive-screen";
 import { bodyPartsImages } from "../constants/Images";
 import { useRouter } from "expo-router";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 const BodyPars = () => {
   const router = useRouter();
@@ -36,7 +37,11 @@ const BodyPars = () => {
 
 const BodyPartCard = ({ index, item, router }) => {
   return (
-    <View>
+    <Animated.View
+      entering={FadeInDown.duration(400)
+        .delay(index * 200)
+        .springify()}
+    >
       <TouchableOpacity
         onPress={() => router.push({ pathname: "/exercises", params: item })}
         style={{ width: wp(44), height: wp(52) }}
@@ -62,7 +67,7 @@ const BodyPartCard = ({ index, item, router }) => {
           {item?.name}
         </Text>
       </TouchableOpacity>
-    </View>
+    </Animated.View>
   );
 };
 
