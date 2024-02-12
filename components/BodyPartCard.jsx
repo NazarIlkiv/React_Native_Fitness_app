@@ -4,11 +4,11 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { LinearGradient } from "expo-linear-gradient";
-
-const BodyPartCard = ({ index, item }) => {
+const BodyPartCard = ({ index, item, router }) => {
   return (
     <View>
       <TouchableOpacity
+        onPress={() => router.push({ pathname: "/exercises", params: item })}
         style={{ width: wp(44), height: wp(52) }}
         className="flex justify-end p-4 mb-4"
       >
