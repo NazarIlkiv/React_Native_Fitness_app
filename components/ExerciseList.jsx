@@ -9,8 +9,6 @@ import { Image } from "expo-image";
 export default function ExerciseList({ data }) {
   const router = useRouter();
 
-  console.log("ExerciseList: ", data);
-
   return (
     <View>
       <FlatList
@@ -28,7 +26,7 @@ export default function ExerciseList({ data }) {
   );
 }
 
-const ExcerciseCard = ({ item, index }) => {
+const ExcerciseCard = ({ item, index, router }) => {
   return (
     <View>
       <TouchableOpacity

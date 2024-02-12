@@ -16,21 +16,21 @@ export default function Exercises() {
   const [exercises, setExercises] = useState(demoBodyPart);
   const item = useLocalSearchParams();
   const router = useRouter();
-  console.log("got item: ", item);
+  // console.log("got item: ", item);
 
   {
     /* receive data from api */
   }
 
-  //   useEffect(() => {
-  //     if (item) getExercises("back");
-  //   }, [item]);
+  // useEffect(() => {
+  //   if (item) getExercises(item.name);
+  // }, [item]);
 
-  //   const getExercises = async (bodyPart) => {
-  //     let data = await fetchExercisesByBodyPart(bodyPart);
-  //     console.log("Data with api: ", data);
-  //     setExercises(data);
-  //   };
+  // const getExercises = async (bodyPart) => {
+  //   let data = await fetchExercisesByBodyPart(bodyPart);
+  //   console.log("Data with api: ", data);
+  //   setExercises(data);
+  // };
 
   return (
     <ScrollView>
