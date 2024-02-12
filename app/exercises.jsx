@@ -13,24 +13,23 @@ import ExerciseList from "../components/ExerciseList";
 import { demoBodyPart } from "../constants/Images";
 
 export default function Exercises() {
-  const [exercises, setExercises] = useState(demoBodyPart);
+  const [exercises, setExercises] = useState([]); // write demoBodyPart instead of empty array and app will be work,demoBodyPart - it`s hardcode array ;
   const item = useLocalSearchParams();
   const router = useRouter();
-  // console.log("got item: ", item);
 
   {
     /* receive data from api */
   }
 
-  // useEffect(() => {
-  //   if (item) getExercises(item.name);
-  // }, [item]);
+  useEffect(() => {
+    if (item) getExercises(item.name);
+  }, [item]);
 
-  // const getExercises = async (bodyPart) => {
-  //   let data = await fetchExercisesByBodyPart(bodyPart);
-  //   console.log("Data with api: ", data);
-  //   setExercises(data);
-  // };
+  const getExercises = async (bodyPart) => {
+    let data = await fetchExercisesByBodyPart(bodyPart);
+    console.log("Data with api: ", data);
+    setExercises(data);
+  };
 
   return (
     <ScrollView>
